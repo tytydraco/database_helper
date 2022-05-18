@@ -1,5 +1,5 @@
-import 'package:databases/database_helper/database_helper.dart';
-import 'package:databases/database_helper/database_helper_config.dart';
+import 'package:databases/database_helper.dart';
+import 'package:databases/database_helper_config.dart';
 import 'package:databases/entry.dart';
 import 'package:flutter/material.dart';
 

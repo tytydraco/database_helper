@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:databases/database_helper/database_helper_config.dart';
+import 'package:databases/database_helper_config.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
