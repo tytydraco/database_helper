@@ -2,11 +2,11 @@ import 'package:databases/database_helper.dart';
 
 class EntryModel implements DatabaseModel {
   final int id;
-  final int age;
+  final String content;
 
   EntryModel({
     required this.id,
-    required this.age,
+    required this.content,
   });
 
   /// Convert this instance to a map
@@ -14,7 +14,7 @@ class EntryModel implements DatabaseModel {
   Map<String, Object?> toMap() {
     return {
       'id': id,
-      'age': age
+      'content': content
     };
   }
 
@@ -22,6 +22,6 @@ class EntryModel implements DatabaseModel {
   static EntryModel fromMap(Map<String, Object?> map) =>
       EntryModel(
         id: map['id'] as int,
-        age: map['age'] as int
+        content: map['content'] as String
       );
 }

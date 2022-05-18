@@ -8,6 +8,6 @@ class DatabaseHelperConfig {
     this.databaseVersion = 1,
     this.databaseFileName = 'database.db',
     this.tableName = 'entries',
-    this.tableSchema = 'id INTEGER PRIMARY KEY, age INTEGER',
+    this.tableSchema = 'id INTEGER PRIMARY KEY, content TEXT',
   });
 }

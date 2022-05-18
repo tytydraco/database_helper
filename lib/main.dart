@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Database Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Database Demo'),
     );
   }
 }
@@ -51,7 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
               return ListView.builder(
                 itemCount: entries.length,
                 itemBuilder: (context, index) {
-                  return Text('${(entries[index] as EntryModel).id} : ${(entries[index] as EntryModel).age}');
+                  final entry = entries[index] as EntryModel;
+                  return Text('${entry.id}\t${entry.content}');
                 },
               );
             } else {
@@ -62,10 +63,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          final timeNow = DateTime.now();
           helper.insert(
             EntryModel(
-              id: DateTime.now().millisecond,
-              age: 10
+              id: timeNow.millisecondsSinceEpoch,
+              content: timeNow.toIso8601String(),
             )
           ).whenComplete(() { setState(() {}); });
         },
